@@ -6,8 +6,8 @@
           <div class="v-center">
             <div class="container">
               <div class="title center">
-                <h1 class="upper">This is our blog<span class="red-dot"></span></h1>
-                <h4>We have a few tips for you.</h4>
+                <h1 class="upper"><?php bloginfo('title');?><span class="red-dot"></span></h1>
+                <h4><?php bloginfo('description');?></h4>
                 <hr>
               </div>
             </div>
@@ -21,20 +21,20 @@
           <div class="blog-posts">
          <?php 
             while(have_posts() ): the_post();?>
-                <?php get_template_part('formats/content', get_post_format());?>
+                <?php get_template_part('formats/content',get_post_format());?>
             <?php endwhile;?>
-
-
           </div>
-          <ul class="pagination">
-            <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="ti-arrow-right"></i></span></a></li>
-          </ul>
+          <?php 
+          if(function_exists('the_posts_pagination')) {
+            the_posts_pagination(array(
+                'prev_text' => '<span aria-hidden="true"><i class="ti-arrow-left"></i></span>',
+                'next_text' => '<span aria-hidden="true"><i class="ti-arrow-right"></i></span>',
+                'screen_reader_text' => ' '
+              )); 
+          }
+          ?>
+
+       
         </div>
         <div class="col-md-3 col-md-offset-1">
           <div class="sidebar hidden-sm hidden-xs">

@@ -1,3 +1,9 @@
+<?php 
+// Call gallery file
+if(file_exists(dirname(__FILE__).'/gallery.php')){
+    require_once(dirname(__FILE__).'/gallery.php');;
+}
+?>
 
 <?php 
 /**
@@ -76,7 +82,3 @@ function theme_all_js_style(){
           Wp_enqueue_script('main', get_template_directory_uri().'/js/main.js',array('jq','jsbundle'),'',true);
 }
 
-// Call gallery file
-if(file_exists(dirname(__FILE__).'gallery.php')){
-    require_once(dirname(__FILE__).'gallery.php');
-}

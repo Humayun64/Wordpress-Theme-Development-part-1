@@ -20,3 +20,25 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     margin: 0;
     border: 0;
 }
+.pagination .nav-links a, .pagination .nav-links span.current {
+	display: inline-block;
+	padding: 10px;
+}
+.pagination .nav-links a.prev,
+.pagination .nav-links a.next {
+	color: black;
+}
+.pagination .nav-links a.prev:hover,
+.pagination .nav-links a.next:hover {
+	color: white;
+	background: black;
+}
+.pagination .nav-links span.current {
+	background: #F25375;
+	color: white;
+}
+.pagination .nav-links span.current:hover,
+.pagination .nav-links a:hover {
+	background: #000000;
+	color: white;
+}

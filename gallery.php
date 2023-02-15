@@ -26,6 +26,6 @@ function make_gallery($attr, $content){
 			<?php endforeach; ?>
 		</ul>
 	</div>
-
+ 
 	<?php return ob_get_clean();
 }

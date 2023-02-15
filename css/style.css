@@ -2611,10 +2611,10 @@ section.parallax .countdown span {
   text-align: center;
   margin-top: 50px;
 }
-.pagination li {
+.pagination a {
   display: inline-block;
 }
-.pagination li.active > a {
+.pagination span.current > a {
   background-color: #EF2D56;
   border-color: #EF2D56;
   color: #fff;
