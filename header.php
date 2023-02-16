@@ -15,7 +15,7 @@
     </div>
     <header id="topnav">
       <div class="container">
-        <div class="logo"><a href="index.html"><img src="images/logo_light.png" alt="" class="logo-light"><img src="images/logo_dark.png" alt="" class="logo-dark"></a></div>
+        <div class="logo"><a href="<?php home_url();?>"><img src=" images/logo_light.png" alt="" class="logo-light"><img src="images/logo_dark.png" alt="" class="logo-dark"></a></div>
         <div class="menu-extras">
           <div class="menu-item">
             <div class="cart"><a href="#"><i class="ti-bag"></i><span class="cart-number">2</span></a>

@@ -3,6 +3,10 @@
 if(file_exists(dirname(__FILE__).'/gallery.php')){
     require_once(dirname(__FILE__).'/gallery.php');;
 }
+//Custom-widget calling 
+if(file_exists(dirname(__FILE__).'/create-widget/custom-widget.php')){
+   require_once(dirname(__FILE__).'/create-widget/custom-widget.php')
+}
 ?>
 
 <?php 
@@ -81,4 +85,16 @@ function theme_all_js_style(){
           wp_enqueue_script('google-map','https://maps.googleapis.com/maps/api/js?v=3.exp',array('jq'),'',true);
           Wp_enqueue_script('main', get_template_directory_uri().'/js/main.js',array('jq','jsbundle'),'',true);
 }
-
+// add sidebar
+add_action('widgets_init','dp1F_sidebar_functions');
+function dp1F_sidebar_functions(){
+    register_sidebar(array(
+        'name'           =>  __('Right Sidebar','dp1F'),
+        'id'             =>  'right-sidebar',
+        'description'    =>  __('Thsis is your Right Sidebar','dp1F'),
+        'before_widget'  =>  '<div class="widget">',
+        'after_widger'   => '</div>',
+        'before_title'   => '<h6 class="upper">',
+        'after_title'    => '</h6>',
+        ));
+}
