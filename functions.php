@@ -1,11 +1,11 @@
 <?php 
 // Call gallery file
 if(file_exists(dirname(__FILE__).'/gallery.php')){
-    require_once(dirname(__FILE__).'/gallery.php');;
+    require_once(dirname(__FILE__).'/gallery.php');
 }
 //Custom-widget calling 
 if(file_exists(dirname(__FILE__).'/create-widget/custom-widget.php')){
-   require_once(dirname(__FILE__).'/create-widget/custom-widget.php')
+   require_once(dirname(__FILE__).'/create-widget/custom-widget.php');
 }
 ?>
 
