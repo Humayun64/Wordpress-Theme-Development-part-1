@@ -7,6 +7,13 @@ if(file_exists(dirname(__FILE__).'/gallery.php')){
 if(file_exists(dirname(__FILE__).'/create-widget/custom-widget.php')){
    require_once(dirname(__FILE__).'/create-widget/custom-widget.php');
 }
+//redux framework file
+if(file_exists(dirname(__FILE__).'/redux/redux-core/framework.php')){
+    require_once(dirname(__FILE__).'/redux/redux-core/framework.php');
+}
+if(file_exists(dirname(__FILE__).'/redux/sample/config.php')){
+    require_once(dirname(__FILE__).'/redux/sample/config.php');
+}
 ?>
 
 <?php 
@@ -42,8 +49,16 @@ function dp1F_theme_functions(){
        'slider'
 
     ));
-}
+    register_post_type('dp1F-Portfolio',array(
+        'labels' => array(
+            'name'    => __('Portfolio','dp1F'),
+            'add_new' => __('Add New Portfolio','dp1F'),
+            'add_new_item' => __('Add New Portfolio','dp1F'),
+        ),
+        'public' => true
+    ));
 
+}
 // adding fonts 
 function get_dp1F_fonts(){
     $fonts[]  = array();
@@ -88,6 +103,7 @@ function theme_all_js_style(){
 // add sidebar
 add_action('widgets_init','dp1F_sidebar_functions');
 function dp1F_sidebar_functions(){
+    //theme sidebar
     register_sidebar(array(
         'name'           =>  __('Right Sidebar','dp1F'),
         'id'             =>  'right-sidebar',
@@ -97,4 +113,25 @@ function dp1F_sidebar_functions(){
         'before_title'   => '<h6 class="upper">',
         'after_title'    => '</h6>',
         ));
+
+    //footer first sidebar 
+    register_sidebar(array(
+        'name'          => __('Footer First Sidebar','dp1F'),
+        'description'   => __('Foooter First Sidebar here','dp1F'),
+        'id'            => 'first-footer-sidebar',
+        'before_widget' => '<div class="col-sm-4"><div class="widget">',
+        'after_widget'  => '</div></div>',
+        'before_title'  => '<h6 class="upper">',
+        'after_title'   => '</h6>',
+    ));
+    //footer middle sidebar
+    register_sidebar(array(
+        'name'          => __('Footer Middle sidebar','dp1F'),
+        'id'            => 'footer-middle-sidebar',
+        'description'   => __('Footer middle sidebar make here','dp1F'),
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => '</div>',
+        'before_title'  =>  '<h6 class="upper">',
+        'after_title'   => '</h6>'
+    ));
 }
