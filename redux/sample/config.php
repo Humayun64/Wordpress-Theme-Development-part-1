@@ -10,7 +10,7 @@
 
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "comet";
+    $opt_name = "dp1F";
 
     // This line is only for altering the demo. Can be easily removed.
     $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
@@ -265,11 +265,11 @@
 
 
     Redux::setSection($opt_name, array(
-        'title'     => __('General Options', 'comet'),
+        'title'     => __('General Options', 'dp1F'),
         'id'        => 'general-options',
         'fields'    => array(
             array(
-                'title' => __('Upload Light Logo', 'comet'),
+                'title' => __('Upload Light Logo', 'dp1F'),
                 'id'    => 'logo-light',
                 'type'  => 'media',
                 'default' => array(
@@ -277,7 +277,7 @@
                 )
             ),
             array(
-                'title' => __('Upload Dark Logo', 'comet'),
+                'title' => __('Upload Dark Logo', 'dp1F'),
                 'id'    => 'logo-dark',
                 'type'  => 'media',
                 'default' => array(
@@ -285,13 +285,13 @@
                 )
             ),
             array(
-                'title' => __('Blog Page Title', 'comet'),
+                'title' => __('Blog Page Title', 'dp1F'),
                 'id'    => 'blog-title',
                 'type'  => 'text',
                 'default' => 'This is our blog'
             ),
             array(
-                'title' => __('Blog Page Subtitle', 'comet'),
+                'title' => __('Blog Page Subtitle', 'dp1F'),
                 'id'    => 'blog-subtitle',
                 'type'  => 'text',
                 'default' => 'We have a few tips for you.'
@@ -304,7 +304,7 @@
 
 
     Redux::setSection($opt_name, array(
-        'title'     => __('Footer Options', 'comet'),
+        'title'     => __('Footer Options', 'dp1F'),
         'id'        => 'footer-options',
         'fields'    => array(
             array(
@@ -317,7 +317,7 @@
     ));
 
     Redux::setSection($opt_name, array(
-        'title'     => __('Social Profiles', 'comet'),
+        'title'     => __('Social Profiles', 'dp1F'),
         'id'        => 'social-options',
         'fields'    => array(
             array(

@@ -1,22 +1,4 @@
 <?php 
-// Call gallery file
-if(file_exists(dirname(__FILE__).'/gallery.php')){
-    require_once(dirname(__FILE__).'/gallery.php');
-}
-//Custom-widget calling 
-if(file_exists(dirname(__FILE__).'/create-widget/custom-widget.php')){
-   require_once(dirname(__FILE__).'/create-widget/custom-widget.php');
-}
-//redux framework file
-if(file_exists(dirname(__FILE__).'/redux/redux-core/framework.php')){
-    require_once(dirname(__FILE__).'/redux/redux-core/framework.php');
-}
-if(file_exists(dirname(__FILE__).'/redux/sample/config.php')){
-    require_once(dirname(__FILE__).'/redux/sample/config.php');
-}
-?>
-
-<?php 
 /**
  * dp1F functions and definitions
  *
@@ -33,6 +15,30 @@ if(file_exists(dirname(__FILE__).'/redux/sample/config.php')){
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+?>
+ <?php 
+// Call gallery file
+if(file_exists(dirname(__FILE__).'/gallery.php')){
+    require_once(dirname(__FILE__).'/gallery.php');
+}
+//Custom-widget calling 
+if(file_exists(dirname(__FILE__).'/create-widget/custom-widget.php')){
+   require_once(dirname(__FILE__).'/create-widget/custom-widget.php');
+}
+//redux framework file
+if(file_exists(dirname(__FILE__).'/redux/redux-core/framework.php')){
+    require_once(dirname(__FILE__).'/redux/redux-core/framework.php');
+}
+if(file_exists(dirname(__FILE__).'/redux/sample/config.php')){
+    require_once(dirname(__FILE__).'/redux/sample/config.php');
+}
+//metabox file calling 
+if(file_exists(dirname(__FILE__).'/redux/metabox/init.php')){
+    require_once(dirname(__FILE__).'/redux/metabox/init.php');
+}
+if(file_exists(dirname(__FILE__).'/redux/metabox/configmeta.php')){
+    require_once(dirname(__FILE__).'/redux/metabox/configmeta.php');
+}
 
 // Theme Basic Function setup
 add_action('after_setup_theme','dp1F_theme_functions');
@@ -59,6 +65,28 @@ function dp1F_theme_functions(){
     ));
 
 }
+
+//metabox function by scripts 
+add_action('admin_print_scripts','add_metabox_scripts',1000);
+function add_metabox_scripts(){ ?>
+<?php if(get_post_type() == 'post') : ?>
+
+  <script>
+    jQuery(document).ready(function(){ 
+        var id = jQuery('input[name="post_format"]:checked').attr('id');
+        if(id == 'post-format-video'){
+            jQuery('.cmb2-id--for-video').show();
+        }
+        else{
+            jQuery('.cmb2-id--for-video').hide();
+        }
+    })
+  </script>
+
+<?php endif;?>
+<?php }
+
+
 // adding fonts 
 function get_dp1F_fonts(){
     $fonts[]  = array();

@@ -19,7 +19,7 @@
         <div class="footer-wrap">
           <div class="col-md-4">
             <div class="copy-text">
-              <p><i class="icon-heart red mr-15"></i>© 2015 Comet Agency.</p>
+              <p><i class="icon-heart red mr-15"></i><?php global $dp1F; echo $dp1F['footer-copyright'];?></p>
             </div>
           </div>
           <div class="col-md-4">

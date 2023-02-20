@@ -6,8 +6,8 @@
           <div class="v-center">
             <div class="container">
               <div class="title center">
-                <h1 class="upper"><?php bloginfo('title');?><span class="red-dot"></span></h1>
-                <h4><?php bloginfo('description');?></h4>
+                <h1 class="upper"><?php global $dp1F; echo $dp1F['blog-title'];?><span class="red-dot"></span></h1>
+                <h4><?php global $dp1F; echo $dp1F['blog-subtitle'];?></h4>
                 <hr>
               </div>
             </div>
