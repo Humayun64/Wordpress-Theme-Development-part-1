@@ -15,8 +15,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-?>
- <?php 
+
 // Call gallery file
 if(file_exists(dirname(__FILE__).'/gallery.php')){
     require_once(dirname(__FILE__).'/gallery.php');
@@ -39,6 +38,13 @@ if(file_exists(dirname(__FILE__).'/redux/metabox/init.php')){
 if(file_exists(dirname(__FILE__).'/redux/metabox/configmeta.php')){
     require_once(dirname(__FILE__).'/redux/metabox/configmeta.php');
 }
+//call nav walker file
+if(file_exists(dirname(__FILE__).'/nav_walker.php')){
+    require_once(dirname(__FILE__).'/nav_walker.php');
+}
+
+
+
 
 // Theme Basic Function setup
 add_action('after_setup_theme','dp1F_theme_functions');
@@ -74,18 +80,59 @@ function add_metabox_scripts(){ ?>
   <script>
     jQuery(document).ready(function(){ 
         var id = jQuery('input[name="post_format"]:checked').attr('id');
+
         if(id == 'post-format-video'){
             jQuery('.cmb2-id--for-video').show();
         }
         else{
             jQuery('.cmb2-id--for-video').hide();
         }
+
+        if(id == 'post-format-audio'){
+            jQuery('.cmb2-id--for-audio').show();
+        }else{
+            jQuery('.cmb2-id--for-audio').hide();
+        }
+        if(id == 'post-format-gallery'){
+            jQuery('.cmb2-id--for-gallery').show();
+        }else{
+            jQuery('.cmb2-id--for-gallery').hide();
+        }
+
+        jQuery('input[name="post_format"]').change(function(){
+            jQuery('.cmb2-id--for-video').hide();
+            jQuery('.cmb2-id--for-audio').hide();
+            jQuery('.cmb2-id--for-gallery').hide();
+
+            var id = jQuery('input[name="post_format"]:checked').attr('id');
+
+        if(id == 'post-format-video'){
+            jQuery('.cmb2-id--for-video').show();
+        }
+        else{
+            jQuery('.cmb2-id--for-video').hide();
+        }
+
+        if(id == 'post-format-audio'){
+            jQuery('.cmb2-id--for-audio').show();
+        }else{
+            jQuery('.cmb2-id--for-audio').hide();
+        }
+        if(id == 'post-format-gallery'){
+            jQuery('.cmb2-id--for-gallery').show();
+        }else{
+            jQuery('.cmb2-id--for-gallery').hide();
+        }
+        });
+        
     })
   </script>
 
 <?php endif;?>
 <?php }
 
+//register menu
+register_nav_menu('main-menu',__('Main Menu','dp1F'));
 
 // adding fonts 
 function get_dp1F_fonts(){

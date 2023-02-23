@@ -13,18 +13,14 @@
     ));
     $metabox->add_field(array(
         'id'   => '_for-gallery',
-        'type' => 'text',
-        'name' => 'Video Url'
+        'type' => 'file_list',
+        'name' => 'Gallery Image'
     ));
     $metabox->add_field(array(
         'id'   => '_for-audio',
         'type' => 'text',
-        'name' => 'Video Url'
+        'name' => 'Audio Url'
     ));
-    $metabox->add_field(array(
-        'id'   => '_for-quote',
-        'type' => 'text',
-        'name' => 'Video Url'
-    ));
+    
  }
 ?> 
