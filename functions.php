@@ -43,6 +43,10 @@ if(file_exists(dirname(__FILE__).'/nav_walker.php')){
     require_once(dirname(__FILE__).'/nav_walker.php');
 }
 
+//shortcode calling
+if(file_exists(dirname(__FILE__).'/shortcodes/shortcode.php')){
+   require_once(dirname(__FILE__).'/shortcodes/shortcode.php');
+}
 
 
 
@@ -69,7 +73,17 @@ function dp1F_theme_functions(){
         ),
         'public' => true
     ));
-
+    register_post_type('dp1F-slider',array(
+        'labels' => array(
+         'name'         => __('Silder','dp1F'),
+         'add_new'      => __('Add Slider','dp1F'),
+         'add_new_item' => __('Add Slider','dp1F'),
+        ),
+        'public'   => true,
+        'supports' => array('title','thumbnail'),
+    ));
+  //register menu
+register_nav_menu('main-menu',__('Main Menu','dp1F'));
 }
 
 //metabox function by scripts 
@@ -130,9 +144,6 @@ function add_metabox_scripts(){ ?>
 
 <?php endif;?>
 <?php }
-
-//register menu
-register_nav_menu('main-menu',__('Main Menu','dp1F'));
 
 // adding fonts 
 function get_dp1F_fonts(){
