@@ -67,12 +67,13 @@ function dp1F_theme_functions(){
     ));
     register_post_type('dp1F-Portfolio',array(
         'labels' => array(
-            'name'    => __('Portfolio','dp1F'),
-            'add_new' => __('Add New Portfolio','dp1F'),
+            'name'         => __('Portfolio','dp1F'),
+            'add_new'      => __('Add New Portfolio','dp1F'),
             'add_new_item' => __('Add New Portfolio','dp1F'),
         ),
         'public' => true
     ));
+    //slider 
     register_post_type('dp1F-slider',array(
         'labels' => array(
          'name'         => __('Silder','dp1F'),
@@ -80,7 +81,7 @@ function dp1F_theme_functions(){
          'add_new_item' => __('Add Slider','dp1F'),
         ),
         'public'   => true,
-        'supports' => array('title','thumbnail'),
+        'supports' => array('title', 'editor', 'thumbnail'),
     ));
   //register menu
 register_nav_menu('main-menu',__('Main Menu','dp1F'));
@@ -221,3 +222,7 @@ function dp1F_sidebar_functions(){
         'after_title'   => '</h6>'
     ));
 }
+?>
+<?php 
+  flush_rewrite_rules(  )
+?>

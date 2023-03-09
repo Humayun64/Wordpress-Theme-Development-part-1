@@ -22,5 +22,21 @@
         'name' => 'Audio Url'
     ));
     
+    //slider
+    
+  $sliders = new_cmb2_box(array(
+    'id'           => 'additionalslider-box',
+    'object_types' => array('dp1F-slider'),
+    'title'        => 'Additional Slider'
+  ));
+  
+  $sliders->add_field(array(
+    'name' => 'Subtitle',
+    'id'   => '_for-slider',
+    'type' => 'text'
+   
+));
+
+
  }
 ?> 

@@ -641,5 +641,6 @@
   }
 
   init();
+  jQuery('.has-megamenu').children('ul').addClass('megamenu');
 
 })(jQuery)
