@@ -21,7 +21,7 @@
                 <ul class="nav">
                 <?php while($posts->have_posts()) : $posts->the_post(); ?>
 
-                   <li><a href="#"><?php the_title(); ?><i class="ti-arrow-right"></i><?php 
+                   <li><a href="<?php the_permalink();?>"><?php the_title(); ?><i class="ti-arrow-right"></i><?php 
                if(!empty($instant ['date'])):?> <span>
                     <?php the_time('d M, Y');?></span><?php endif;?></a></li>
 

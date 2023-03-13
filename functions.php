@@ -65,14 +65,31 @@ function dp1F_theme_functions(){
        'slider'
 
     ));
-    register_post_type('dp1F-Portfolio',array(
-        'labels' => array(
-            'name'         => __('Portfolio','dp1F'),
-            'add_new'      => __('Add New Portfolio','dp1F'),
-            'add_new_item' => __('Add New Portfolio','dp1F'),
-        ),
-        'public' => true
-    ));
+    // post type
+    register_post_type('comet-portfolio', array(
+		'labels' => array(
+			'name' => __('Portfolio', 'dp1F'),
+			'add_new' => __('Add New Portfolio', 'dp1F'),
+			'add_new_item' => __('Add New Portfolio', 'dp1F'),
+		),
+		'public' => true,
+		'supports'=> array('title', 'editor', 'thumbnail')
+	));
+
+	register_taxonomy('comet-portfolio-category','comet-portfolio', array(
+		'labels' => array(
+			'name' => 'Types', 
+			'add_new' => 'Add New type', 
+			'add_new_item' => 'Add New type'
+		),
+		'public' => true,
+		'hierarchical' => true
+	));
+
+    
+
+    
+
     //slider 
     register_post_type('dp1F-slider',array(
         'labels' => array(
@@ -221,8 +238,10 @@ function dp1F_sidebar_functions(){
         'before_title'  =>  '<h6 class="upper">',
         'after_title'   => '</h6>'
     ));
+} 
+register_activation_hook(__FILE__,'flush_rewrite_role');
+function flush_rewrite_role(){
+    flush_rewrite_rules();
 }
-?>
-<?php 
-  flush_rewrite_rules(  )
-?>
+
+  

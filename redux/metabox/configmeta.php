@@ -22,8 +22,8 @@
         'name' => 'Audio Url'
     ));
     
-    //slider
-    
+
+    //slider  
   $sliders = new_cmb2_box(array(
     'id'           => 'additionalslider-box',
     'object_types' => array('dp1F-slider'),
@@ -36,6 +36,31 @@
     'type' => 'text'
    
 ));
+
+//add button
+$sliders->add_field(array(
+    'name'   => 'First button text',
+    'id'     => '_first_button_text',
+    'type'   => 'text'
+
+));
+$sliders->add_field(array(
+    'name'   => 'First button url',
+    'id'     => '_first_button_url',
+    'type'   => 'text'
+
+));
+$sliders->add_field(array(
+    'name'          => 'First button type',
+    'id'            => '_first-button-type',
+    'type'          => 'select',
+    'options'        => array(
+    'red'           => 'Red Button',
+    'transparent'   => 'Transparent Button'
+    )
+
+));
+
 
 
  }
