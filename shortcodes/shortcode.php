@@ -115,7 +115,7 @@ function newp_custom_slider(){
                 <div class="v-center">
                   <div class="title txt-xs-center">
                     <h4 class="upper"><?php echo $subtitle; ?></h4>
-                    <h3><?php echo $title;?><span class="red-dot"></span></h3>
+                    <h3>Hello<?php echo $title;?><span class="red-dot"></span></h3>
                     <hr>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ function newp_custom_slider(){
    $atts = extract(shortcode_atts( array(
        'title'       => 'The Vision',
        'subtitle'    => 'Not just code.',
-       'visionimage' => ''
+       'visionimage' => get_template_directory_uri().'/images/bg/18.jpg'
    ), $atts ));
 
    ob_start(); ?>
