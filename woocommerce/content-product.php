@@ -24,16 +24,16 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
-<div class="col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="shop-product">
             <div class="product-thumb"><a href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
-              <div class="product-overlay"><a href="#" class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a></div>
+              <div class="product-overlay"><a href="<?php global $product; $product->add_to_cart_url();?>" class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a></div>
+			        
             </div>
             <div class="product-info">
-              <h4 class="upper"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4><span><?php global $product; $product->get_price_html(); ?></span>
+              <h4 class="upper"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4><span><?php global $product; echo $product->get_price_html(); ?></span>
               <div class="save-product"><a href="#"><i class="icon-heart"></i></a></div>
             </div>
           </div>
         </div>
-</li>
+	
